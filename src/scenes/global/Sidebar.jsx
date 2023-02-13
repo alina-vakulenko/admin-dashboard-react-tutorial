@@ -15,7 +15,6 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import { color, palette } from "@mui/system";
 
 export default function SideBar() {
   const theme = useTheme();
@@ -28,20 +27,16 @@ export default function SideBar() {
     const colors = tokens(theme.palette.mode);
     return (
       <MenuItem
-        // rootStyles={{
-        //   [`.${menuClasses.button}`]: {
-        //     padding: "5px 35px 5px 20px",
-        //     color: colors.grey[100],
-        //     "&:hover": {
-        //       color: "#868dfb",
-        //     },
-        //   },
-        // }}
         active={selected === title}
-        // style={{ color: colors.grey[100] }}
+        style={{ color: colors.grey[100] }}
         onClick={() => setSelected(title)}
         icon={icon}
         component={<Link to={to} />}
+        rootStyles={{
+          "$ .ps-menuitem-root:active": {
+            color: "#6870fa",
+          },
+        }}
       >
         <Typography>{title}</Typography>
       </MenuItem>
@@ -49,13 +44,22 @@ export default function SideBar() {
   };
 
   return (
-    <Box backgroundColor={colors.primary[400]}>
-      <Sidebar
-      // rootStyles={{
-      //   background: colors.primary[400],
-      // }}
-      >
-        <Menu>
+    <Box sx={{ backgroundColor: colors.primary[400] }}>
+      <Sidebar sx={{ backgroundColor: "transparent" }}>
+        <Menu
+          rootStyles={{
+            "& .ps-menuitem-root": {
+              color: colors.grey[100],
+              p: "5px 35px 5px 20px !important",
+            },
+            "& .ps-menuitem-root:hover": {
+              color: "#868dfb",
+            },
+            "& .ps-menuitem-root:active": {
+              color: "#6870fa",
+            },
+          }}
+        >
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => collapseSidebar()}
