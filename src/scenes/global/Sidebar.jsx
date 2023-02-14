@@ -28,15 +28,9 @@ export default function SideBar() {
     return (
       <MenuItem
         active={selected === title}
-        style={{ color: colors.grey[100] }}
         onClick={() => setSelected(title)}
         icon={icon}
         component={<Link to={to} />}
-        rootStyles={{
-          "$ .ps-menuitem-root:active": {
-            color: "#6870fa",
-          },
-        }}
       >
         <Typography>{title}</Typography>
       </MenuItem>
@@ -44,19 +38,30 @@ export default function SideBar() {
   };
 
   return (
-    <Box sx={{ backgroundColor: colors.primary[400] }}>
-      <Sidebar sx={{ backgroundColor: "transparent" }}>
+    <Box
+      sx={{
+        "& .ps-sidebar-root": {
+          border: "none",
+        },
+        "& .ps-sidebar-container": {
+          backgroundColor: colors.primary[400],
+        },
+      }}
+    >
+      <Sidebar>
         <Menu
           rootStyles={{
-            "& .ps-menuitem-root": {
-              color: colors.grey[100],
-              p: "5px 35px 5px 20px !important",
-            },
+            // "& .ps-menuitem-root:": {
+            //   color: colors.grey[100],
+            // },
             "& .ps-menuitem-root:hover": {
               color: "#868dfb",
             },
-            "& .ps-menuitem-root:active": {
+            "& .ps-menuitem-root .ps-active": {
               color: "#6870fa",
+            },
+            "& .ps-menu-button": {
+              backgroundColor: "transparent",
             },
           }}
         >
@@ -64,7 +69,9 @@ export default function SideBar() {
           <MenuItem
             onClick={() => collapseSidebar()}
             icon={collapsed ? <MenuOutlinedIcon /> : undefined}
-            style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
+            style={{
+              margin: "10px 0 20px 0",
+            }}
           >
             {!collapsed && (
               <Box

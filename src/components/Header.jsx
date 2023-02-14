@@ -5,7 +5,7 @@ export default function Header({ title, subtitle }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box>
+    <Box paddingBottom="40px">
       <Typography
         variant="h2"
         color={colors.grey[100]}

@@ -62,7 +62,7 @@ export default function Contacts() {
         title="CONTACTS"
         subtitle="List of Contacts for Future Reference"
       />
-      <Box m="40px 0 0 0" height="90vh">
+      <Box height="75vh">
         <DataGrid
           rows={mockDataContacts}
           columns={columns}

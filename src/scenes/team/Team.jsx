@@ -76,7 +76,7 @@ export default function Team() {
   return (
     <Box m="20px">
       <Header title="TEAM" subtitle="Managing the Team Members" />
-      <Box m="40px 0 0 0" height="90vh">
+      <Box height="75vh">
         <DataGrid
           rows={mockDataTeam}
           columns={columns}

@@ -20,7 +20,11 @@ export default function Dashboard() {
 
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="flex-start"
+      >
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Box>
           <Button
@@ -224,6 +228,7 @@ export default function Dashboard() {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
+          marginBottom="20px"
         >
           <Typography variant="h5" fontWeight="600">
             Campaign
@@ -250,6 +255,7 @@ export default function Dashboard() {
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
+          marginBottom="20px"
         >
           <Typography
             variant="h5"
@@ -268,6 +274,7 @@ export default function Dashboard() {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
+          marginBottom="20px"
         >
           <Typography variant="h5" fontWeight="600" sx={{ mb: "15px" }}>
             Geography Based Traffic

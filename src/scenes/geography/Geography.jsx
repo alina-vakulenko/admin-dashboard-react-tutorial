@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import GeographyChart from "../../components/GeographyChart";
 import { tokens } from "../../theme";
 
-export default function Line() {
+export default function Geography() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
